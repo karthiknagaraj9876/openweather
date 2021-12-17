@@ -1,4 +1,4 @@
-<div fxLayoutAlign="center center" fxFlexFill>
+<div fxLayoutAlign="center center" fxFlexFill [ngStyle]="{backgroundImage:'url(../assets/images/bgimage.png)','background-position': 'center','background-repeat': 'no-repeat','background-size': 'cover','height':'100%'}">
     <mat-card fxFlex="25">
         <mat-toolbar color="primary">Registration</mat-toolbar>
         <br>
@@ -20,7 +20,7 @@
 
             <mat-form-field appearance="fill">
                 <mat-label>Date of Birth</mat-label>
-                <input matInput [matDatepicker]="picker" placeholder="Enetr your date of birth" id="dob" formControlName="dob">
+                <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" placeholder="Enetr your date of birth" id="dob" formControlName="dob">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -40,9 +40,9 @@
                 <mat-label>Password</mat-label>
                 <input matInput type="password" [errorStateMatcher]="matcher" placeholder="Enetr your password" id="password" formControlName="password">
                 <mat-error *ngIf="this.registerForm.controls['password'].hasError('required')">Password is required</mat-error>
-                <mat-error *ngIf="this.registerForm.controls['password'].hasError('minlength')">Password must be contain minimum of 8 characters</mat-error>
-                <mat-error *ngIf="this.registerForm.controls['password'].hasError('maxlength')">Password must be contain maximum of 20 characters</mat-error>
-                <mat-error *ngIf="this.registerForm.controls['password'].hasError('pattern')">Password must be contain 1 uppercase 1 lowercase and 1 number</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('minlength')">Password must contains minimum of 8 characters</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('maxlength')">Password must contains maximum of 20 characters</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('pattern')">Password must contains 1 uppercase, 1 lowercase, 1 number & 1 special characters (~@#$^%)</mat-error>
             </mat-form-field>
 
             <mat-form-field>

@@ -3,6 +3,7 @@ import { FormGroup,  FormBuilder,  Validators, FormControl, FormGroupDirective, 
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import {ErrorStateMatcher} from '@angular/material/core';
+import * as moment from 'moment';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -19,13 +20,19 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class RegisterComponent implements OnInit {
 
+  minDate: Date;
+  maxDate: Date;
+
   matcher = new MyErrorStateMatcher();
 
-  constructor(private _snackBar: MatSnackBar,private router: Router) { }
+  constructor(private _snackBar: MatSnackBar,private router: Router) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 150, 0, 1);
+    this.maxDate = new Date();
+  }
 
   ngOnInit(): void {
   }
-
 
   password_pattern = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[~@#$^%])[a-zA-Z0-9~@#$^%]*";
 
@@ -66,6 +73,5 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.get('password');
   }
 
-  
 
 }

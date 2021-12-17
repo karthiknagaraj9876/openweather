@@ -38,6 +38,8 @@ export class HomeComponent implements OnInit {
   temperature_string = "Temperature";
   humidity_string = "Humidity";
   wind_speed_string = "Wind Speed";
+  language_string   ="Language";
+  logout_string = "Logout";
 
   //Get weather data 
   getWeatherData(){
@@ -82,8 +84,6 @@ export class HomeComponent implements OnInit {
       this.selected_language = "हिन्दी";
 
     }
-
-    console.log("selected Language:"+this.selected_language_to_translate);
 
     this.translate.use(this.selected_language_to_translate);
 

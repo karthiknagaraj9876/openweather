@@ -1,4 +1,4 @@
-<div fxLayoutAlign="center center" fxFlexFill>
+<div fxLayoutAlign="center center" fxFlexFill [ngStyle]="{backgroundImage:'url(../assets/images/bgimage.png)','background-position': 'center','background-repeat': 'no-repeat','background-size': 'cover','height':'100%'}" >
     <mat-card fxFlex="25">
         <mat-toolbar color="primary"><mat-icon>cloud</mat-icon> &nbsp; &nbsp; Open Weather</mat-toolbar>
         <br>
@@ -18,7 +18,7 @@
 
             <br>
 
-            New to Open Weather ?
+            <p>New to Open Weather ?</p>
 
             <button mat-raised-button color="primary" routerLink="/register" type="button">Register</button>
            

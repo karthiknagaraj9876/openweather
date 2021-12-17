@@ -7,5 +7,7 @@
     "Mandya" : "Mandya",
     "Temperature" : "Temperature",
     "Humidity" : "Humidity",
-    "Wind Speed" : "Wind Speed"
+    "Wind Speed" : "Wind Speed",
+    "Language" :"Language",
+    "Logout" :"Logout"
 }

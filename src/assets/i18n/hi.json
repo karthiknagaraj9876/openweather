@@ -7,5 +7,7 @@
     "Mandya" : "मंड्या",
     "Temperature" : "तापमान",
     "Humidity" : "आर्द्रता",
-    "Wind Speed" : "हवा की गति"
+    "Wind Speed" : "हवा की गति",
+    "Language" :"भाषा",
+    "Logout" :"लॉग आउट"
 }

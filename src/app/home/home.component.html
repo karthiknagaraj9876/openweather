@@ -4,14 +4,14 @@
     </button>
     <span> &nbsp; Open Weather</span>
     <span class="example-spacer"></span>
-    <button mat-button [matMenuTriggerFor]="menu">{{ selected_language }} <mat-icon>arrow_drop_down</mat-icon></button>
+    <button mat-button matTooltip="{{ language_string | translate }}" [matMenuTriggerFor]="menu">{{ selected_language }} <mat-icon>arrow_drop_down</mat-icon></button>
     <mat-menu #menu="matMenu">
         <button mat-menu-item (click)="changeLanguage('en')">English</button>
         <button mat-menu-item (click)="changeLanguage('ka')">ಕನ್ನಡ</button>
         <button mat-menu-item (click)="changeLanguage('hi')">हिन्दी</button>
     </mat-menu>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon matTooltip="Logout" routerLink="/login">logout</mat-icon>
+      <mat-icon matTooltip="{{logout_string | translate }}" routerLink="/login">logout</mat-icon>
     </button>
 </mat-toolbar>
 
