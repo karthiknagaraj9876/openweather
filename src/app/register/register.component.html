@@ -1,0 +1,60 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Registration</mat-toolbar>
+        <br>
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="example-form" fxLayoutAlign="stretch" fxLayout="column" novalidate>
+
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enetr your fullname" id="name" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select id="gender" formControlName="gender">
+                  <mat-option value="M">Male</mat-option>
+                  <mat-option value="F">Female</mat-option>
+                  <mat-option value="O">Other</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="Enetr your date of birth" id="dob" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <mat-label>Mobile No.</mat-label>
+                <input matInput type="phone" placeholder="Enetr your mobile no." id="mobile" formControlName="mobile">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Enetr your email address" id="email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [errorStateMatcher]="matcher" placeholder="Enetr your password" id="password" formControlName="password">
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('minlength')">Password must be contain minimum of 8 characters</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('maxlength')">Password must be contain maximum of 20 characters</mat-error>
+                <mat-error *ngIf="this.registerForm.controls['password'].hasError('pattern')">Password must be contain 1 uppercase 1 lowercase and 1 number</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput placeholder="Enetr your Address" id="address" formControlName="address"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" [disabled]="registerForm.pristine || registerForm.invalid" type="submit">Register</button>
+            <br>
+            <button mat-raised-button color="basic" routerLink="/login" type="button">Cancel</button>
+          </form>
+          
+    </mat-card>
+    
+</div>

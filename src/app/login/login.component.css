@@ -1,0 +1,9 @@
+.copyright-text{
+    position: fixed;
+    margin: auto;
+    text-align: center;
+    bottom: 18px;
+    align-items: center;
+    width: 100%;
+    color: #3f51b5;
+}

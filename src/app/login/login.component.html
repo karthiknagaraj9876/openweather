@@ -1,0 +1,32 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary"><mat-icon>cloud</mat-icon> &nbsp; &nbsp; Open Weather</mat-toolbar>
+        <br>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="example-form" fxLayoutAlign="stretch" fxLayout="column" novalidate>
+
+            <mat-form-field>
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Enetr your email" id="username" formControlName="username">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Enetr your password" id="password" formControlName="password">
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" [disabled]="loginForm.pristine || loginForm.invalid" type="submit">Login</button>
+
+            <br>
+
+            New to Open Weather ?
+
+            <button mat-raised-button color="primary" routerLink="/register" type="button">Register</button>
+           
+
+          </form>
+          
+    </mat-card>
+    
+</div>
+
+<div class="copyright-text">&copy; 2021, Openweather Inc, All Rights Reserved</div>
