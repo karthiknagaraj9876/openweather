@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   //Define Strings 
   temperature_string = "Temperature";
   humidity_string = "Humidity";
+  wind_speed_string = "Wind Speed";
 
   //Get weather data 
   getWeatherData(){
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit {
       (response) => {                         
         this.result = response; 
         this.api_results.push(response);
-        
+        console.log(response);
       });
 
       if(i==city_arr.length-1){

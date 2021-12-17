@@ -31,3 +31,12 @@
     vertical-align: middle;
     margin: 1px 13px;
 }
+
+.mat-card{
+    box-shadow: 0px 0px 20px 0px #8080803b;
+  }
+
+.inner-div{
+    align-self: center;
+    width: 25%;
+  }

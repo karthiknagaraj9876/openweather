@@ -31,13 +31,22 @@ export class LoginComponent implements OnInit {
     if(username==localStorage.getItem('email') && password==localStorage.getItem('password')){
       this.router.navigate(['/home']);
     }
-    else{
+    else if(username==localStorage.getItem('email') && password!=localStorage.getItem('password')){
       this._snackBar.open("Invalid username or password!",'x',{
         duration: 3000,
         verticalPosition: 'top', 
         horizontalPosition: 'start',
         panelClass: ['mat-toolbar', 'mat-warn']
       });
+    }
+    else{
+      this._snackBar.open("Invalid User. Please register to login",'x',{
+        duration: 3000,
+        verticalPosition: 'top', 
+        horizontalPosition: 'start',
+        panelClass: ['mat-toolbar', 'mat-warn']
+      });
+      this.router.navigate(['/register']);
     }
   }
 

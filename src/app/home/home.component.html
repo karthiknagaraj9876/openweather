@@ -20,16 +20,21 @@
     <mat-card *ngFor="let api_result of api_results">
         <h1 class="city-name">{{ api_result.name | translate }}</h1>
         <div fxLayout="row" fxLayout.xs="column" class="weather-data">
-            <div fxFlexAlign="center">
+            <div  class="inner-div">
                 <span class="material-icons">
                     device_thermostat
-                    </span>{{ temperature_string | translate }} : {{ api_result.main.temp }}&#8451;
-                </div>
-            <div fxFlexAlign="center"> 
+                </span>{{ temperature_string | translate }} : {{ api_result.main.temp }}&#8451;
+            </div>
+            <div  class="inner-div"> 
                 <span class="material-icons">
                     water
-                    </span> {{ humidity_string | translate }} : {{ api_result.main.humidity}}%
-                </div>
+                </span> {{ humidity_string | translate }} : {{ api_result.main.humidity}}%
+            </div>
+            <div class="inner-div"> 
+                <span class="material-icons">
+                    air
+                    </span> {{ wind_speed_string | translate }} : {{ api_result.wind.speed}} m/s
+            </div>
         </div>
     </mat-card>
   
