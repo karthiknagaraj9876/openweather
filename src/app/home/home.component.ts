@@ -82,7 +82,6 @@ export class HomeComponent implements OnInit {
     }
     else{
       this.selected_language = "हिन्दी";
-
     }
 
     this.translate.use(this.selected_language_to_translate);
